@@ -1,0 +1,38 @@
+#map {
+    z-index: 1;
+    height: 800px;
+    width: 1800px;
+    margin-left: 40px;
+}
+
+#img {
+    z-index: 999;
+}
+
+#gps {
+    color: white;
+    font-family: Andale Mono, monospace;
+    display: flex;
+    justify-content: center;
+    /* Centre les éléments sur la ligne */
+    align-items: center;
+    /* Centre les éléments verticalement */
+    margin-bottom: 20px;
+    /* Espacement sous le conteneur */
+
+}
+
+body {
+    background-image: url('image/iss_back.jpg');
+
+}
+
+h1 {
+    color: white;
+    font-family: Andale Mono, monospace;
+    display: flex;
+    justify-content: center;
+    /* Centre les éléments sur la ligne */
+    align-items: center;
+    /* Centre les éléments verticalement */
+}
