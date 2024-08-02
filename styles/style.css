@@ -19,6 +19,8 @@
 label{
     color: white;
     font-family: Andale Mono, monospace;
+    font-weight : bold;
+    color: rgb(9, 0, 10);
 }
 
 #iconSelect{
@@ -31,8 +33,9 @@ label{
 }
 
 #gps {
-    color: white;
+    color: rgb(9, 0, 10);
     font-family: Andale Mono, monospace;
+    font-weight : bold;
     display: flex;
     justify-content: center;
     /* Centre les éléments sur la ligne */

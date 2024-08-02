@@ -7,10 +7,23 @@
     "South Pacific Ocean" : "Océan Pacifique Sud",
     "Baltic Sea" : "Mer Baltique",
     "Atlantic Ocean": "Océan Atlantique",
-    "North atlantic ocean" : "Océan Atlantique Nord",
-    "South atlantic ocean" : "Océan Atlantique Sud",
+    "North Atlantic Ocean" : "Océan Atlantique Nord",
+    "South Atlantic Ocean" : "Océan Atlantique Sud",
     "Artic ocean" : "Océan Atlantique",
     "Océan Austral" : "Southern ocean",
-    "South China" : "Mer de Chine Méridionale",
-    "Eastern archipelagic seas" : "Mer de Chine Orientale"
+    "South China Sea" : "Mer de Chine Méridionale",
+    "Eastern archipelagic Sea" : "Mer de Chine Orientale",
+    "Canarias Sea" : "Mer des Canarie",
+    "Gulf Of Tonkin" : "Golfe du Tonkin",
+    "Yellow Sea" : "Mer Jaune",
+    "Sea of Japan" : "Mer du Japon",
+    "Sulawesi Sea" : "Mer de Célébes",
+    "Timor Sea" : "Mer de Timor",
+    "Arafura Sea" : "Mer d'Arafura",
+    "Tasman Sea" : "Mer de Tasmanie",
+    "Sea ​​of ​​Azov" : "Mer d'Azov",
+    "Bay Of Bengal" : "Golfe du Bengale",
+    "Andaman Or Burma Sea" : "Mer d'Andaman"
+
+
   }
