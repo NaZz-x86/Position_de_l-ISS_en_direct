@@ -13,6 +13,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
         iconSize: [50,50],
         iconAnchor : [25,25]
     });
+    const astronauteIcon = L.icon({
+        iconUrl : '/images/astronaute.png',
+        iconSize : [50,50],
+        iconAnchor : [25,25]
+    })
+    const aigleIcon = L.icon({
+        iconUrl : '/images/aigle.png',
+        iconSize : [50,50],
+        iconAnchor : [25,25]
+    })
+        //function pour changer Icon
+        function changementIcon(nomIcon){
+            let nouvelIcon;
+            switch(nomIcon){
+                case 'issIcon':
+                    nouvelIcon = issIcon;
+                    break;
+                case 'astronauteIcon':
+                    nouvelIcon = astronauteIcon;
+                    break;
+                case 'aigleIcon':
+                    nouvelIcon = aigleIcon;
+                    break;
+                default:
+                    nouvelIcon = issIcon;
+            }
+            marqueurActuel.setIcon(nouvelIcon);
+        }
+        //Gerer le gengement de selection 
+        document.getElementById('iconSelect').addEventListener('change', function(){
+            changementIcon(this.value);
+        })
     //Marquer actuelle ( pour suprimer l'ancienne possition)
     let marqueurActuel = null;
     //Les pointillés
@@ -33,7 +65,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const longitude = reponse['iss_position']['longitude'];
                 //Selectionne la balise et on insert pour afficher en toString la latitude et longitude 
                 const gps = document.getElementById('gps');
-                gps.innerText = `Latitude = ${latitude} | longitude = ${longitude}`
+                gps.innerText = `Latitude = ${latitude}  longitude = ${longitude}`
                 itineraire.addLatLng([latitude, longitude]);
                 //Offre la possibilité de supprimer une couche dans un bloc de données dans un document ArcMap
                 if(marqueurActuel){
@@ -41,11 +73,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 };
                 //On ajoute le marquer sur la map avec API (latitude, longitude) + les information IssIcon
-                marqueurActuel = L.marker([latitude, longitude], { icon: issIcon }).addTo(map);
+                marqueurActuel = L.marker([latitude, longitude], { icon: marqueurActuel?marqueurActuel.options.icon : issIcon }).addTo(map);
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                .then(r=> r.json())
+                .then(reponse => {
+                    const reponseAdresse = reponse['display_name'];
+                    const adresseISS = document.getElementById('adresseISS');
+                    if(reponseAdresse == null){
+                        fetch(`http://api.geonames.org/oceanJSON?formatted=true&lat=${latitude}&lng=${longitude}&username=NicolasDev44`)
+                            .then(r => r.json())
+                            .then(reponse => {
+                                const reponseMer = reponse['ocean']['name'];
+                                adresseISS.innerText = reponseMer;
+                                fetch('/traduction.json')
+                                    .then(r => r.json())
+                                    .then(reponse => {
+                                        const traductionFrançais = reponse[reponseMer]
+                                        console.log(traductionFrançais)
+                                        adresseISS.innerText = traductionFrançais;
+                                    })
+                            })
+                            .catch(error => adresseISS.innerText= 'Veuillez nous excuser nous avont plus de crédit API')
+                    }else{
+                    adresseISS.innerText = reponseAdresse;
+                    }
+                })
+                .catch(error => console.error('Erreur :', error));
         });
     };    
+
     //Toute les 1000Seconde miseAjour des position et ajoute un nouveau marker
     setInterval(miseajourPosition,1000);
     //Pour initailiser le premier marquer 
     miseajourPosition();
+
 });
