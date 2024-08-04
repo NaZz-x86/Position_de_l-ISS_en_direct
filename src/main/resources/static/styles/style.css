@@ -1,0 +1,79 @@
+#contenaire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px; /* Limite maximale de largeur */
+    overflow: hidden; /* Empêche le dépassement */
+}
+#map {
+    z-index: 1;
+    width: 100%;
+    height: 100%; /* Utilise toute la hauteur disponible du conteneur */
+    max-width: 1200px;
+    max-height: 600px; /* Limite maximale de hauteur */
+    margin-left: 0; /* Centre la carte horizontalement */
+}
+label{
+    color: white;
+    font-family: Andale Mono, monospace;
+    font-weight : bold;
+    color: rgb(9, 0, 10);
+}
+
+#iconSelect{
+    color: black;
+    font-family: Andale Mono, monospace;
+}
+
+#img {
+    z-index: 999;
+}
+
+#gps {
+    color: rgb(9, 0, 10);
+    font-family: Andale Mono, monospace;
+    font-weight : bold;
+    display: flex;
+    justify-content: center;
+    /* Centre les éléments sur la ligne */
+    align-items: center;
+    /* Centre les éléments verticalement */
+    margin-bottom: 20px;
+    /* Espacement sous le conteneur */
+
+}
+
+body {
+    background-image: url('/images/arriere-plan-planetes-astrales-univers.jpg');
+    background-size: cover; /* Ajuste l'image pour couvrir toute la surface */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+}
+#adresseISS{
+    color: white;
+    font-family: Andale Mono, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: Andale Mono, monospace;
+    display: flex;
+    justify-content: center;
+    /* Centre les éléments sur la ligne */
+    align-items: center;
+    /* Centre les éléments verticalement */
+}
+h2{
+    color: white;
+    font-family: Andale Mono, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+}
