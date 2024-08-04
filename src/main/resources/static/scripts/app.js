@@ -74,14 +74,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 itineraire.addLatLng([latitudeISS, longitudeISS]);
                 //Gestion de continuité de la longitudeISS 
                 if (dernierPoint) {
-                    const dernierlongitudeISS = dernierPoint.lng;
-                    if (Math.abs(longitudeISS - dernierlongitudeISS) > 180) {
-                        if (longitudeISS > dernierlongitudeISS) {
+                    const dernierLongitudeISS = dernierPoint.lng;
+                    if (Math.abs(longitudeISS - dernierLongitudeISS) > 180) {
+                        // Ajustement de la longitude pour corriger le passage de la ligne de changement de date
+                        if (longitudeISS > dernierLongitudeISS) {
                             longitudeISS -= 360;
                         } else {
                             longitudeISS += 360;
                         }
                     }
+                    dernierPoint = L.latLng(latitudeISS, longitudeISS);
                 }
                     //récupére les la géolocalisation de l'utilisateur 
                 if('geolocation' in navigator){

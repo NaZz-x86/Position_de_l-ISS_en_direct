@@ -1,0 +1,9 @@
+<header th:fragment="fragment-entete">
+    <nav>
+        <ul>
+            <li>Se connecter</li>
+            <li>S'inscrire</li>
+            <li sec:authorize="isAuthenticated()">Se déconnecter</li>
+        </ul>
+    </nav>
+</header>
