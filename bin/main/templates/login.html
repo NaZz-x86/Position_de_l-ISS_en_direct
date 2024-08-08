@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Position ISS en direct</title>
+        <link rel="icon" type="image/vnd.icon" href="/images/IconIss.png">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/login.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+	<body>
+		<div th:replace="~{/fragments/fragment-entete :: fragment-entete}"></div>
+		<form action="" method="get" class="form-login">
+			<div class="loginEmail">
+				<label for="loginEmail">Email:</label>
+				<input type="text" name="loginEmail" id="loginEmail">
+			</div>
+			<div class="loginMotDePasse">
+				<label for="loginMotDePasse">Mot de passe:</label>
+				<input type="text" name="loginMotDePasse" id="loginMotDePasse">
+		</form>
+		<div th:replace="~{/fragments/fragment-piedpage :: fragment-piedpage}"></div>
+	</body>
+</html>

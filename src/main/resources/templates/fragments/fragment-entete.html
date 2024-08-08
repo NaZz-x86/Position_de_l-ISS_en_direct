@@ -1,9 +1,9 @@
 <header th:fragment="fragment-entete">
-    <nav>
+    <nav id="nav-bar">
         <ul>
-            <li>Se connecter</li>
-            <li>S'inscrire</li>
-            <li sec:authorize="isAuthenticated()">Se déconnecter</li>
+            <li id="connecter"><a href="/login">Se connecter</a></li>
+            <li id="inscrire"><a href="/inscription">S'inscrire</a></li>
+            <li id="déconnecter" sec:authorize="isAuthenticated()"><a href="/deconexion">Se déconnecter</a></li>
         </ul>
     </nav>
 </header>

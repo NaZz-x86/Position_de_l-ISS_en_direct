@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Position ISS en direct</title>
+        <link rel="icon" type="image/vnd.icon" href="/images/IconIss.png">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/inscription.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+	<body>
+		<div th:replace="~{/fragments/fragment-entete :: fragment-entete}"></div>
+		<form action="" method="get" class="form-login">
+			<div class="inscriptionNom">
+				<label for="inscriptionNom">Nom:</label>
+				<input type="text" name="inscriptionNom" id="inscriptionNom">
+			</div>
+			<div class="inscriptionPrenom">
+				<label for="inscriptionPrenom">Prénom:</label>
+				<input type="text" name="inscriptionPrenom" id="inscriptionPrenom">
+			</div>
+			<div class="inscriptionEmail">
+				<label for="inscriptionEmail">Email:</label>
+				<input type="text" name="inscriptionEmail" id="inscriptionEmail">
+			</div>
+			<div class="inscriptionMotDePasse">
+				<label for="inscriptionMotDePasse">Mot de passe:</label>
+				<input type="text" name="inscriptionMotDePasse" id="inscriptionMotDePasse">
+			</div>
+			<div class="inscriptionVerifMotDePasse">
+				<label for="inscriptionVerifMotDePasse">Verification du mot de passe:</label>
+				<input type="text" name="inscriptionVerifMotDePasse" id="inscriptionVerifMotDePasse">
+			</div>
+		</form>
+		<div th:replace="~{/fragments/fragment-piedpage :: fragment-piedpage}"></div>
+	</body>
+</html>

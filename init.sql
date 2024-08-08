@@ -1,0 +1,10 @@
+CREATE TABLE UTILISATEURS(
+	id						INTEGER IDENTITY(1,1)			NOT NULL,
+	nom						VARCHAR(30)						NOT NULL,
+	prenom					VARCHAR(30)						NOT NULL,
+	email					VARCHAR(50)						NOT NULL,
+	mot_de_passe			VARCHAR(100)					NOT NULL,
+	administrateur			BIT								NOT NULL
+);
+ALTER TABLE UTILISATEURS ADD CONSTRAINT PK_utilisateur PRIMARY KEY (id);
+ALTER TABLE UTILISATEURS ADD CONSTRAINT UK_utilisateur_email UNIQUE (email);

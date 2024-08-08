@@ -76,12 +76,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if (dernierPoint) {
                     const dernierLongitudeISS = dernierPoint.lng;
                     if (Math.abs(longitudeISS - dernierLongitudeISS) > 180) {
-                        // Ajustement de la longitude pour corriger le passage de la ligne de changement de date
-                        if (longitudeISS > dernierLongitudeISS) {
-                            longitudeISS -= 360;
-                        } else {
-                            longitudeISS += 360;
-                        }
+                       itineraire.addLatLng([latitudeISS, longitudeISS]);
+                    }else{
+                        itineraire.addLatLng([latitudeISS, longitudeISS]);
                     }
                     dernierPoint = L.latLng(latitudeISS, longitudeISS);
                 }
